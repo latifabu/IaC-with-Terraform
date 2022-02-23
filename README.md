@@ -5,6 +5,8 @@
 #### Terraform deafult file/folder structure
 ##### .gitignore
 ###### AWS keys with Terraform security
+![terraform_with_ansible-new](https://user-images.githubusercontent.com/98215575/155313101-794c5a5a-7910-4c5f-b01f-fbb46bad211b.jpg)
+
 
 - Terraform commands
 - ` terraform init` T initialise Terraform
