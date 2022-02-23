@@ -6,6 +6,8 @@
 ##### .gitignore
 ###### AWS keys with Terraform security
 
+![terraform_with_ansible-new](https://user-images.githubusercontent.com/98215575/155320606-e7970ac7-b057-4dbb-b6eb-c923c3979642.jpg)
+
 - Terraform commands
 - `terraform init` T initialise Terraform
 - `terraform plan` checks the script
