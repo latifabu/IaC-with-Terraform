@@ -3,3 +3,5 @@
 .terraform.tfstate.lock.info
 terraform.exe
 terraform.tfstate
+variable.tf
+terraform.tfstate.backup
