@@ -113,6 +113,13 @@ route  {
         Name = "name"
   }
 }
+### Attempted to use this to associate the route table and subnet. Had to manually do this.
+```
+# resource "aws_route_table_association" "eng103a_latif_tf_subnet_association" {
+#   route_table_id = aws_route_table.eng103a_latif_tf_rt.id
+#   subnet_id = aws_subnet.eng103a_latif_tf_vpc_publicSN.id
+# }
+```
 ```
 ### Security group
 - Subnet requirements - Name - VPC ID - CIDR Block - Tags
@@ -160,6 +167,7 @@ tags = {
 ```
 ### Create an instance on AWS - Ansible controller
 - AMI made for AWS controller we can start it by using Terraform and adding the AMI id
+- To launch the app we created on Ansible. We created an AMI from that app. We then used the AMI in the below script.
 ```
 # # name of the resource
 resource "aws_instance" "name" {
@@ -183,3 +191,6 @@ vpc_security_group_ids = ["${nameid}"]
 }
 
 ```
+
+- The script runs from top to bottom. So all the resources can be run at once. If they are in the correct order'
+- So the script can be then run with `terraform plan` and `terraforom apply` 
