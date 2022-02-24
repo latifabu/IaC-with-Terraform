@@ -87,6 +87,7 @@ resource "aws_subnet" "Subnet name" {
 }
 ```
 ### Internet Gateway
+```
 - Internet Gateway requirements - VPC ID, Tags
   
 resource "aws_internet_gateway" "name" {
@@ -96,10 +97,10 @@ resource "aws_internet_gateway" "name" {
         Name = "name"
     }
 }
-
+```
 ### Route table
 - Route Table requirements - VPC ID, CIDR Block, Gateway ID, Tags
-  
+```  
 resource "aws_route_table" "name" {
     vpc_id = "${vpc.id}"
  
@@ -112,10 +113,10 @@ route  {
         Name = "name"
   }
 }
-
+```
 ### Security group
 - Subnet requirements - Name - VPC ID - CIDR Block - Tags
-  
+```  
 resource "aws_security_group" "name" {
   vpc_id = "${vpc.id}"
   
@@ -156,7 +157,7 @@ tags = {
     Name = "name"
     }
 }
-
+```
 ### Create an instance on AWS - Ansible controller
 - AMI made for AWS controller we can start it by using Terraform and adding the AMI id
 ```
