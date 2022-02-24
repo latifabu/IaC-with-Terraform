@@ -113,14 +113,19 @@ route  {
         Name = "name"
   }
 }
+```
+
 ### Attempted to use this to associate the route table and subnet. Had to manually do this.
+
 ```
-# resource "aws_route_table_association" "eng103a_latif_tf_subnet_association" {
-#   route_table_id = aws_route_table.eng103a_latif_tf_rt.id
-#   subnet_id = aws_subnet.eng103a_latif_tf_vpc_publicSN.id
-# }
+ resource "aws_route_table_association" "subnet_name" {
+   route_table_id = routert.id
+   subnet_id = aws_subnet.subenet.id
+ }
+
 ```
-```
+
+
 ### Security group
 - Subnet requirements - Name - VPC ID - CIDR Block - Tags
 ```  
