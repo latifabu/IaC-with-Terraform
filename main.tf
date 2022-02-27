@@ -19,18 +19,29 @@ resource "aws_vpc" "eng103a_latif_tf_vpc" {
         Name = "103a_latif_terraform_vpc"
     }
 }
-
+# my subnet
 resource "aws_subnet" "eng103a_latif_tf_vpc_public" {
     vpc_id     = "${aws_vpc.eng103a_latif_tf_vpc.id}"
     cidr_block = "10.0.11.0/24"
     map_public_ip_on_launch = true
-    availability_zone = var.avail_zone
+    availability_zone = "eu-west-1a"
     
     tags = {
         Name = "eng103a_latif_tf_vpc_publicSN"
     }
 }
 
+# my second subnet
+resource "aws_subnet" "eng103a_latif_tf_vpc_public-2" {
+    vpc_id     = "${aws_vpc.eng103a_latif_tf_vpc.id}"
+    cidr_block = "10.0.14.0/24"
+    map_public_ip_on_launch = true
+    availability_zone = "eu-west-1b"
+    
+    tags = {
+        Name = "eng103a_latif_tf_vpc_public-2"
+    }
+}
 resource "aws_internet_gateway" "eng103a_latif_tf_igw" {
     vpc_id = "${aws_vpc.eng103a_latif_tf_vpc.id}"
     
@@ -108,7 +119,7 @@ vpc_security_group_ids = ["${aws_security_group.latif_sg_app.id}"]
  # subnet id   
   subnet_id = "${aws_subnet.eng103a_latif_tf_vpc_public.id}"
 # which AMI to use
-  ami = var.app_ami_id
+  ami = "ami-0765af24323e4f33c"
 # what type of instace
   instance_type = var.instance_type
 # do you want public IP

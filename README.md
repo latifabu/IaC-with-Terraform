@@ -33,6 +33,7 @@ Install
 - Add the 2 new variables
 -  Open git bash terminal and check if terraform is present with 
 - `terraform --version`
+- Powershell refresh command `refreshenv` 
 Run:
 `terraform init` 
 `terraform plan`
@@ -199,3 +200,4 @@ vpc_security_group_ids = ["${nameid}"]
 
 - The script runs from top to bottom. So all the resources can be run at once. If they are in the correct order'
 - So the script can be then run with `terraform plan` and `terraforom apply` 
+- To run one resource use `terraform apply -target=aws_instance.<my_instance>`
